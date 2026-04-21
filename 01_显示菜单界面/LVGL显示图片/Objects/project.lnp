@@ -210,6 +210,10 @@
 ".\objects\lv_switch.o"
 ".\objects\lv_table.o"
 ".\objects\lv_textarea.o"
+".\objects\github.o"
+".\objects\lvg_logo.o"
+".\objects\temp_logo.o"
+".\objects\wifi_logo.o"
 --library_type=microlib --strict --scatter ".\Objects\project.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

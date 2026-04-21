@@ -17,6 +17,12 @@
 TaskHandle_t StartUpTask_Handle;
 void StartUpTask(void * p);
 
+//UI界面图片源声明
+LV_IMG_DECLARE(GitHub_Logo);
+LV_IMG_DECLARE(WIFI_Logo);
+LV_IMG_DECLARE(TEMP_Logo);
+LV_IMG_DECLARE(LVGL_Logo);
+
 //LVGL任务
 #define LvglTask_STACKSIZE 512
 #define LvglTask_PRIO			1
@@ -39,10 +45,31 @@ void LvglTask(void * p){
 }
 
 void LVGL_Test(){
-	lv_obj_t * btn = lv_btn_create(lv_scr_act());
-	lv_obj_t * label = lv_label_create(btn);
-	lv_label_set_text(label,"hello");
-	lv_obj_center(btn);
+	//主界面UI设计
+	lv_obj_set_style_bg_color(lv_scr_act(), lv_color_hex(0xFFFFFF), LV_STATE_DEFAULT);//设置背景颜色为白色
+	lv_obj_t* img_GitHub = lv_img_create(lv_scr_act());//创建GitHub图标图像
+	lv_img_set_src(img_GitHub, &GitHub_Logo);
+	lv_obj_set_pos(img_GitHub, 265, 213);
+	lv_obj_update_layout(img_GitHub);
+	lv_obj_t* img_WIFI = lv_img_create(lv_scr_act());//创建WIFI图标图像
+	lv_img_set_src(img_WIFI,&WIFI_Logo);
+	lv_obj_set_pos(img_WIFI, 142, 10);
+	lv_obj_update_layout(img_WIFI);
+	lv_obj_t* img_LVGL = lv_img_create(lv_scr_act());//创建LVGL_Logo图标图像
+	lv_img_set_src(img_LVGL, &LVGL_Logo);
+	lv_obj_set_pos(img_LVGL, 10, 10);
+	lv_obj_set_style_bg_opa(img_LVGL, LV_OPA_0, LV_STATE_DEFAULT);
+	lv_obj_update_layout(img_LVGL);
+	lv_obj_t* img_TEMP = lv_img_create(lv_scr_act());//创建TEMP图标图像
+	lv_img_set_src(img_TEMP, &TEMP_Logo);
+	lv_obj_set_pos(img_TEMP, 189, 190);
+	lv_obj_update_layout(img_TEMP);
+
+	lv_obj_t* line = lv_line_create(lv_scr_act());//创建分割线
+	static lv_point_t line_points[] = { {0, 136}, {320, 136} };//分割线的起点和终点坐标
+	lv_line_set_points(line, line_points, 2);
+	lv_obj_set_style_line_color(line, lv_color_hex(0x000000),0);
+	lv_obj_set_style_line_width(line, 3, 0);
 }
 
 int main(){

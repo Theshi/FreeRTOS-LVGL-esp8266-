@@ -337,7 +337,7 @@
               <MiscControls>--no-multibyte-chars</MiscControls>
               <Define>USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>.\Start;.\User;.\Library;.\System;.\FreeRTOS\portable;.\FreeRTOS\src;.\Hardware;.\Task;.\Hardware\Mpu6050;.\BSP;.\LVGL;.\LVGL\port;.\LVGL\src</IncludePath>
+              <IncludePath>.\Start;.\User;.\Library;.\System;.\FreeRTOS\portable;.\FreeRTOS\src;.\Hardware;.\Task;.\Hardware\Mpu6050;.\BSP;.\LVGL;.\LVGL\port;.\LVGL\src;.\UI;.\UI\IMG</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -2435,6 +2435,31 @@
               <FileName>lv_textarea.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\LVGL\src\widgets\lv_textarea.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>UI</GroupName>
+          <Files>
+            <File>
+              <FileName>GitHub.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\UI\IMG\GitHub.c</FilePath>
+            </File>
+            <File>
+              <FileName>LVG_Logo.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\UI\IMG\LVG_Logo.c</FilePath>
+            </File>
+            <File>
+              <FileName>TEMP_Logo.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\UI\IMG\TEMP_Logo.c</FilePath>
+            </File>
+            <File>
+              <FileName>WIFI_Logo.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\UI\IMG\WIFI_Logo.c</FilePath>
             </File>
           </Files>
         </Group>
